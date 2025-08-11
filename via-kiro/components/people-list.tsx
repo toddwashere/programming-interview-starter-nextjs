@@ -51,7 +51,7 @@ export function PeopleList({ people }: PeopleListProps) {
               {person.pokemonImageUrl && (
                 <img
                   src={person.pokemonImageUrl}
-                  alt={person.favoritePokemon}
+                  alt={person.favoritePokemon || ""}
                   className="w-8 h-8"
                   title={`Favorite Pokémon: ${person.favoritePokemon}`}
                 />
