@@ -1,5 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import bcrypt from "bcryptjs";
+import fs from "fs";
+import path from "path";
 
 const prisma = new PrismaClient();
 
@@ -17,7 +19,36 @@ async function main() {
     },
   });
 
-  // Create some demo people
+  // Read demo people from CSV file
+  const csvPath = path.join(__dirname, "demo-people.csv");
+  const csvContent = fs.readFileSync(csvPath, "utf-8");
+  const lines = csvContent.trim().split("\n");
+  const headers = lines[0].split(",");
+
+  const demoPersons = [];
+
+  // Parse CSV and create people
+  for (let i = 1; i < lines.length; i++) {
+    const values = lines[i].split(",");
+    const personData = {
+      firstName: values[0],
+      lastName: values[1],
+      email: values[2],
+      phone: values[3],
+      company: values[4],
+      favoritePokemon: values[5],
+      pokemonImageUrl: values[6],
+      userId: user.id,
+    };
+
+    const person = await prisma.person.create({
+      data: personData,
+    });
+
+    demoPersons.push(person);
+  }
+
+  // Keep the original two people for backward compatibility
   const person1 = await prisma.person.create({
     data: {
       firstName: "John",
@@ -69,7 +100,9 @@ async function main() {
     ],
   });
 
-  console.log("Database seeded successfully!");
+  console.log(
+    `Database seeded successfully! Created ${demoPersons.length + 2} people.`
+  );
 }
 
 main()
