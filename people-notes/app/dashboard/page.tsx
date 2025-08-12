@@ -4,6 +4,7 @@ import { prisma } from "@/lib/db";
 import { PeopleList } from "@/components/people-list";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Upload } from "lucide-react";
 
 async function getUser() {
   const cookieStore = cookies();
@@ -47,6 +48,12 @@ export default async function DashboardPage() {
             <div className="flex space-x-4">
               <Link href="/dashboard/people/new">
                 <Button>Add Person</Button>
+              </Link>
+              <Link href="/examples/import-wizard">
+                <Button variant="outline">
+                  <Upload className="w-4 h-4 mr-2" />
+                  Import Contacts
+                </Button>
               </Link>
               <Link href="/api/auth/logout">
                 <Button variant="outline">Logout</Button>
