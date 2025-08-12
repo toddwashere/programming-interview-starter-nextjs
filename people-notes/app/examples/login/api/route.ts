@@ -36,9 +36,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Timing attack vulnerability - different response times
     if (!user || user.length === 0) {
-      // Simulate database work to make timing attacks easier
       await new Promise((resolve) => setTimeout(resolve, Math.random() * 100));
       return NextResponse.json(
         { error: "Invalid credentials" },
