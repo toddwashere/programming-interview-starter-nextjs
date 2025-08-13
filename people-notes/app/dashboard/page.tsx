@@ -46,14 +46,14 @@ export default async function DashboardPage() {
               <p className="text-gray-600">Welcome back, {user.name}!</p>
             </div>
             <div className="flex space-x-4">
-              <Link href="/dashboard/people/new">
-                <Button>Add Person</Button>
-              </Link>
               <Link href="/examples/import-wizard">
                 <Button variant="outline">
                   <Upload className="w-4 h-4 mr-2" />
                   Import Contacts
                 </Button>
+              </Link>
+              <Link href="/dashboard/people/new">
+                <Button>Add Person</Button>
               </Link>
               <Link href="/api/auth/logout">
                 <Button variant="outline">Logout</Button>
