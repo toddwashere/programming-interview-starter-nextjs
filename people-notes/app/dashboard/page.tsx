@@ -52,6 +52,9 @@ export default async function DashboardPage() {
                   Import Contacts
                 </Button>
               </Link>
+              <Link href="/dashboard/people/deduplication">
+                <Button variant="outline">Find Duplicates</Button>
+              </Link>
               <Link href="/dashboard/people/new">
                 <Button>Add Person</Button>
               </Link>

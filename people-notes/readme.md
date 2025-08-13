@@ -1,6 +1,6 @@
 # PeopleNotes - Technical Interview Project
 
-A full-stack application for managing contacts and notes, built with modern web technologies. This project is designed to assess various technical skills including code reading, architecture planning, database design, security awareness, and clean code principles.
+A full-stack application for managing contacts and notes.
 
 ## 🚀 Tech Stack
 
@@ -32,19 +32,15 @@ A full-stack application for managing contacts and notes, built with modern web 
 
 ### Installation Steps
 
-1. **Clone and navigate to the project**
+Within the `people-notes` folder:
 
-   ```bash
-   cd via-kiro
-   ```
-
-2. **Install dependencies**
+1. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-3. **Set up the database**
+2. **Set up the database**
 
    ```bash
    # Generate Prisma client
@@ -57,13 +53,13 @@ A full-stack application for managing contacts and notes, built with modern web 
    npm run db:seed
    ```
 
-4. **Start the development server**
+3. **Start the development server**
 
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**
+4. **Open your browser**
    Navigate to [http://localhost:3333](http://localhost:3333)
 
 ### Demo Credentials
@@ -92,116 +88,3 @@ The application uses three main models:
 - **Note**: Multiple notes per person with title and content
 
 View the complete schema in `prisma/schema.prisma`.
-
-## 🔍 Assessment Areas
-
-This codebase is designed to evaluate:
-
-### 1. Code Reading & Troubleshooting
-
-- Mixed coding patterns and styles
-- Some intentional issues to identify
-- AI-generated code patterns
-
-### 2. Architecture & Planning
-
-- API route organization
-- Component structure decisions
-- Database relationship design
-
-### 3. Security Awareness
-
-- Authentication implementation
-- Input validation patterns
-- Potential OWASP vulnerabilities
-
-### 4. Clean Code Principles
-
-- Component organization
-- Function decomposition opportunities
-- Code reusability patterns
-
-### 5. Database Design
-
-- Schema normalization
-- Relationship modeling
-- Query optimization opportunities
-
-## 🎯 Interview Discussion Points
-
-### Potential Improvements
-
-- Authentication could use JWT tokens or NextAuth.js
-- Error handling could be more comprehensive
-- Loading states and user feedback
-- API rate limiting and caching
-- Database indexing optimization
-- Component prop validation with PropTypes
-- Better separation of concerns
-
-### Security Considerations
-
-- Password hashing implementation
-- SQL injection prevention
-- XSS protection in user inputs
-- CSRF protection
-- Input sanitization
-
-### Architecture Decisions
-
-- Monolith vs microservices trade-offs
-- Client-side vs server-side rendering
-- State management approaches
-- API design patterns
-
-## 📁 Project Structure
-
-```
-via-kiro/
-├── app/                    # Next.js app directory
-│   ├── api/               # API routes
-│   ├── dashboard/         # Protected dashboard pages
-│   └── globals.css        # Global styles
-├── components/            # Reusable UI components
-│   └── ui/               # Shadcn UI components
-├── lib/                  # Utility functions and configurations
-├── prisma/               # Database schema and migrations
-├── __tests__/            # Test files
-└── package.json          # Dependencies and scripts
-```
-
-## 🔧 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm test` - Run Jest tests
-- `npm run db:push` - Push schema changes to database
-- `npm run db:studio` - Open Prisma Studio
-- `npm run db:seed` - Seed database with demo data
-
-## 🐛 Known Issues (Intentional)
-
-Some issues are intentionally included for assessment purposes:
-
-1. Basic authentication without proper session management
-2. Missing error boundaries in React components
-3. No API rate limiting
-4. Potential N+1 query issues
-5. Missing input sanitization in some areas
-6. No proper logging system
-7. Hardcoded configuration values
-
-## 📝 Notes for Interviewers
-
-This project provides multiple discussion points around:
-
-- Code quality and maintainability
-- Security best practices
-- Performance optimization
-- User experience improvements
-- Testing strategies
-- Deployment considerations
-
-The intentional issues and improvement opportunities make it ideal for assessing a candidate's ability to identify problems and propose solutions.
