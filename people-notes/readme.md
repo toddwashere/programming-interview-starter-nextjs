@@ -88,12 +88,3 @@ The application uses three main models:
 - **Note**: Multiple notes per person with title and content
 
 View the complete schema in `prisma/schema.prisma`.
-
-# Tasks to complete
-
-[ ] Show me around the codebase, best guess of what everything does.
-[ ] Set the spacing in between cards to be tighter
-[ ] `lib/contact-deduplication` Implement: DeDuplicator function, run tests
-[ ] `app/examples/login/api` - Review route to see what could be improved with security.
-[ ] `app/examples/import-wizard` - Explore opportunities to refactor.
-[ ] Using AI assistance, add search and filter capabilities to the People List `app/dashboard/people/`. Can search any string field of a Person.
